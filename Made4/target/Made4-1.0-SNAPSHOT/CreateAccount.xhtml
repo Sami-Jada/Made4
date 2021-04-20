@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    
+    <h:head>
+        <title> Made - Create an Account </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    
+    <body style="background-color: #BF0404">
+       
+        
+        
+        <h:form id="UserCreateForm">
+            <div align='right'>
+                <p:commandButton id="Home" style="border-color: #BF0404; background-color: white; color: #BF0404; font-weight: bold" value="Home" onclick="location.href='index.xhtml'"/>
+                <p:commandButton id="bStalls" style="border-color: #BF0404; background-color: white; color: #BF0404; font-weight: bold" value="Browse Stalls" onclick="location.href='browseStalls.xhtml'"/>
+                <p:commandButton id="AboutUS" style="border-color: #BF0404; background-color: white; color: #BF0404; font-weight: bold" value="About Us" onclick="location.href='AboutUs.xhtml'"/>
+                <p:commandButton id="ContactUs" style="border-color:#BF0404; background-color: white; color: #BF0404; font-weight: bold" value="Contact Us" onclick="location.href='ContactUs.xhtml'"/>
+                <p:commandButton id="LearnMore" style="border-color: #BF0404; background-color: white; color: #BF0404; font-weight: bold" value="Learn More" onclick="location.href='LearnMore.xhtml'"/>
+            </div>
+            
+            <div align="center">
+           
+                <p:card style="background-color: black; width: 80rem">
+            <div align="center">
+            <img src="MadeLogo.jpg" alt="Logo" style="width: 175px; height: 175px; border-color:#BF0404; "/>    
+            </div>
+            <h1 align="center" style="color: white; font-family: Arial, Helvetica"> Start your journey to success here.</h1>
+            <h3 align="center" style="color: white; font-family: Arial, Helvetica"> Sign up below! </h3>
+            
+            <div style="display: flex">
+               <p:card style="background-color: black; width: 25rem; margin: 0 auto">
+                
+                   <div align="center">
+                   <h1 style="color: white; font-family: Arial" > Account Information </h1> 
+                   
+                   <p:inputText id="email" style=" width: 22rem" value="#{userBean.user.email}" placeholder="Email" required="true" requiredMessage="Enter your email to prooced."/>
+                   <br/>
+                   <br/>
+                   <p:inputText id="username" style=" width: 22rem" value="#{userBean.user.username}" placeholder="Username" required="true" requiredMessage="Enter a username to proceed."/>
+                   <br/>
+                   <br/>
+                   <p:password id="password" style=" width: 22rem" value="#{userBean.user.password}" placeholder="Password" required="true" requiredMessage="Enter a password to proceed." match="Confirmpassword"/>
+                   <br/>
+                   <br/>
+                   <p:password id="Confirmpassword" style=" width: 22rem" value="#{userBean.user.password}" placeholder="Confirm Password" required="true" />
+
+                   <br/>
+              
+                   </div>
+               </p:card>
+                
+               <p:divider layout="vertical"/>
+                
+               <p:card style="background-color: black; width: 25rem; margin: 0 auto">
+                    
+                   <div align="center">
+                   <h1 style="color: white; font-family: Arial"> Personal Information </h1>
+                   <p:inputText id="firstName"  style=" width: 22rem" placeholder="First Name" value="#{userBean.user.firstName}"  required="true" requiredMessage="Enter your first name to proceed."/>
+                   <br/>
+                   <br/>
+                   <p:inputText id="lastName" style=" width: 22rem" value="#{userBean.user.lastName}" placeholder="Last Name" required="true" requiredMessage="Enter your last name to proceed"/>                   
+                   <br/>
+                   <br/>
+                   <p:calendar id="dateofBirth" style=" width: 22rem" pattern="MM/dd/yyyy" value="#{userBean.user.dateofBirth}" placeholder="Date of Birth" required="true" requiredMessage="Enter your date of birth to proceed" showOn="button"/>
+                   </div>
+               </p:card>
+               
+               <p:divider layout="vertical"/>
+               
+               <p:card style="background-color: black; width: 25rem; margin: 0 auto">
+                   <div align="center"> 
+                   <h1 style="color: white; font-family: Arial"> Address and Contact Information </h1>
+                
+                   <p:inputText id="streetAddress" style=" width: 22rem" value="#{userBean.user.streetAddress}" placeholder="Street Address" required="true" requiredMessage="Enter your street address to proceed"/>
+                   <br/>
+                   <br/>
+                   <p:inputText id="postalCode" style=" width: 22rem" value="#{userBean.user.postalCode}" required="true" requiredMessage="Enter your postalCode to proceed" placeholder="Postal Code" />
+                   <br/>
+                   <br/>
+                   <p:inputText id="city" value="#{userBean.user.city}" style=" width: 22rem" required="true" requiredMessage="Enter the city you live in to proceed" placeholder="City"/>
+                   <br/>
+                   <br/>
+                   <p:inputText id="province" value="#{userBean.user.province}" required="true" requiredMessage="Enter the province you live in to proceed" style=" width: 22rem" placeholder="Province" />
+                   <br/>
+                   <br/>
+                    <p:inputText id="phoneNumber" value="#{userBean.user.phoneNumber}" style=" width: 22rem" placeholder="Phone Number" required="true" requiredMessage="Enter your phone number to proceed"/>
+                </div>
+                </p:card>
+            
+            </div>
+            </p:card> 
+            
+            <p:card style="background-color: black; width: 80rem" >
+                <div align="center">
+                    <p:commandButton id ="submit" type="submit"  style=" width: 22rem; align-content: center; background-color: white; border-color: #BF0404; font-weight: bold; color: #BF0404" value="Sign me up!" action="#{userBean.save()}"/>
+                    <br/>
+                    <h:outputText style="color: white; font-family: sans-serif" value="Already have an account?"/>
+                    <p:commandLink style="font-family: sans-serif" value="Click Here." onclick="location.href='SignIn.xhtml'" />
+                </div>
+            </p:card>
+            
+            </div>
+        </h:form>
+        
+       
+    
+    </body>
+</html>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    
+    <h:head>
+        <title> #{userBean.user.username}'s Account</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    
+    <body style='background-color: #BF0404'>
+        
+        
+        <h:form>
+            <div align="right">
+                
+                <p:commandButton id="myStall" style="border-color: #BF0404; background-color: white; color: #BF0404; font-weight: bold" value="My Stall" onclick="location.href='stall.xhtml'"/>
+                <p:commandButton id="settings" style="border-color: #BF0404; background-color: white; color: #BF0404; font-weight: bold" value="Settings" onclick="location.href='Settings.xhtml'"/>
+                <p:commandButton id="Home" style="border-color: #BF0404; background-color: white; color: #BF0404; font-weight: bold" value="sign Out" onclick="location.href='SignIn.xhtml'"/>
+                
+
+            </div>
+            
+          <div align="center">
+            <img src="MadeLogo.jpg" alt="Logo" style="width: 175px; height: 175px; border-color:#BF0404; "/>    
+            </div>  
+        <h1 align="center" style="color: white; font-family: Arial, Helvetica"> Welcome to your account </h1>
+        <h1 align="center" style="color: white; font-family: Arial, Helvetica"> #{userBean.user.username} </h1>
+        
+        
+        <br/>
+        <br/>
+        
+        <div>
+            
+                
+                
+                <div align="center">
+                <p:commandButton  style="font-weight: bold; color: #BF0404; border-color: #BF0404; background-color: white; width: 10rem" value="Set Up Stall" onclick='location.href="createStall.xhtml"'/>
+                <br/>
+                <p:commandButton  style="font-weight: bold; color: #BF0404; border-color: #BF0404; background-color: white; width: 10rem" value="Browse Stalls" onclick='location.href="browseStalls.xhtml"'/>
+                </div>
+            
+            
+        </div>
+        </h:form>
+    </body>
+</html>

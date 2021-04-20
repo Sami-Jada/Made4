@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      >
+  <h:head>
+        <title> Made - Browse Stalls </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    
+    <body style="background-color: #BF0404">
+        
+        
+        <div class="card">
+    <h:form id="form">
+        <div align='right'>
+                <p:commandButton id="Home" style="border-color: #BF0404; background-color: white; color: #BF0404; font-weight: bold" value="Home" action="index"/>
+                <p:commandButton id="goBack" style="border-color: #BF0404; background-color: white; color: #BF0404; font-weight: bold" value="Go Back" action="Account"/>
+                <p:commandButton id="login" style="border-color: #BF0404; background-color: white; color: #BF0404; font-weight: bold" value="Sign In" action="SignIn"/>
+                <p:commandButton id="signup" style="border-color: #BF0404; background-color: white; color: #BF0404; font-weight: bold" value="Sign Up" action="CreateAccount"/>
+                <p:commandButton id="AboutUS" style="border-color: #BF0404; background-color: white; color: #BF0404; font-weight: bold" value="About Us" action="AboutUs"/>
+                <p:commandButton id="ContactUs" style="border-color:#BF0404; background-color: white; color: #BF0404; font-weight: bold" value="Contact Us" action="ContactUs"/>
+                <p:commandButton id="LearnMore" style="border-color: #BF0404; background-color: white; color: #BF0404; font-weight: bold" value="Learn More" action="LearnMore"/>
+            
+            
+        </div>
+        <br/>
+        <div align="center">
+            <img src="MadeLogo.jpg" alt="Logo" style="width: 175px; height: 175px; border-color:#BF0404; "/>    
+        </div>
+        
+        <div align="left">    
+            
+            <p:commandButton id="addProduct" style="border-color: #BF0404; background-color: white; color: #BF0404; font-weight: bold" value="Add New Product" onclick="location.href='createProduct.xhtml'"/>
+    
+            <p:dataTable id="products" var="product" value="#{productBean.products}" rowKey="#{product.productID}">
+                
+                <p:column headerText="Name">
+                    <h:outputText value="#{product.productName}" />
+                </p:column>    
+                <p:column headerText="Description">
+                    <h:outputText value="#{product.productDescription}" />
+                </p:column>
+                <p:column headerText="Price">
+                    <h:outputText value="#{product.productPrice}" />
+                </p:column>
+            </p:dataTable>
+        </div>
+        
+       
+       
+    </h:form>
+</div>
+        
+        
+        
+    </body>
+</html>

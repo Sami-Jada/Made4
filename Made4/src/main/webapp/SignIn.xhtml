@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    
+    <h:head>
+        <title> Made - Log In </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    
+    <body style="background-color: #BF0404">
+        <h:form>
+            <div align='right'>
+                <p:commandButton id="Home" style="border-color: #BF0404; background-color: white; color: #BF0404; font-weight: bold" value="Home" onclick="location.href='index.xhtml'"/>
+                <p:commandButton id="bStalls" style="border-color: #BF0404; background-color: white; color: #BF0404; font-weight: bold" value="Browse Stalls" onclick="location.href='browseStalls.xhtml'"/>
+                <p:commandButton id="AboutUS" style="border-color: #BF0404; background-color: white; color: #BF0404; font-weight: bold" value="About Us" onclick="location.href='AboutUs.xhtml'"/>
+                <p:commandButton id="ContactUs" style="border-color:#BF0404; background-color: white; color: #BF0404; font-weight: bold" value="Contact Us" onclick="location.href='ContactUs.xhtml'"/>
+                <p:commandButton id="LearnMore" style="border-color: #BF0404; background-color: white; color: #BF0404; font-weight: bold" value="Learn More" onclick="location.href='LearnMore.xhtml'"/>            
+            </div>
+           
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            
+            <p:card style="width: 25rem; margin:0 auto; background-color: black">
+                <div align="center"> 
+                    <img src="MadeLogo.jpg" alt="Logo" style="width: 170px; height: 170px; border-color:#BF0404; "/>
+                    
+                    <br/>
+                    <br/>
+                    
+                    <p:inputText id="username" value="#{userBean.user.username}" required="true" alt="Enter your username" placeholder="Username" style="width: 22rem"/>
+                
+                    <br/>
+                    <br/>
+                
+                    
+                    <p:password id ="password" required="true" value="#{UserBean.user.password}" alt="Enter your password here" placeholder="Password" style="width: 22rem"/>
+                
+                    <br/>
+                    <br/>
+                
+                    <p:commandButton style ="font-weight: bold; color: #BF0404; border-color: #BF0404; background-color: white; width: 22rem" type ="submit" value="Sign In"/>
+                
+                    <br/>
+                
+                    <p:divider  align="center"/>
+                       
+                    <p:commandButton  style="font-weight: bold; color: #BF0404; border-color: #BF0404; background-color: white; width: 22rem"  value="Sign Up" onclick='location.href="CreateAccount.xhtml"'/>
+                </div>
+            </p:card>
+        </h:form>
+        
+        <h:form>
+            
+        </h:form>
+        
+    
+    </body>
+
+</html>
+

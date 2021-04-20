@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      >
+    
+    <h:head>
+        <title> Made - Set Up Stall </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <body style="background-color: #BF0404">
+        <h:form>
+       
+            <div align="right">
+                <p:commandButton id="back" style="border-color: #BF0404; background-color: white; color: #BF0404; font-weight: bold" value="Go Back" onclick="location.href='Account.xhtml'"/>
+                <p:commandButton id="Home" style="border-color: #BF0404; background-color: white; color: #BF0404; font-weight: bold" value="sign Out" onclick="location.href='SignIn.xhtml'" />
+    
+            </div>
+            
+            <div algin="center">
+            
+            
+            <p:card style="width: 25rem; margin:0 auto; background-color: black">
+            <div align="center">
+            <img src="MadeLogo.jpg" alt="Logo" style="width: 175px; height: 175px; border-color:#BF0404; "/>    
+            </div>
+            <h1 align="center" style="color: white; font-family: Arial, Helvetica"> Create your stall here! </h1>
+            <h3 align="center" style="color: white; font-family: Arial, Helvetica"> Enter stall details below </h3>
+                
+                <div align="center" var="stall">
+                    <p:inputText style=" width: 22rem" value="#{stallBean.stall.stallTitle}" required="true" requiredMessage="Enter a title for your new stall to proceed" placeholder="Stall name"/>
+                   <br/>
+                   <br/>
+                   <p:inputText style=" width: 22rem" value="#{stallBean.stall.username}" required="true" requiredMessage=" Enter your username to proceed" placeholder="Your username"/>
+                   <br/>
+                   <br/>
+                   <p:inputTextarea style=" width: 22rem" value="#{stallBean.stall.description}" required="true" requiredMessage="Enter A description to continue" placeholder="Description"/>
+                   <br/>
+            
+                   <br/>
+                   <p:commandButton style ="font-weight: bold; color: #BF0404; border-color: #BF0404; background-color: white; width: 22rem" type ="submit" value="Create Stall" action="#{stallBean.save()}"  />
+            </div>
+        </p:card>
+        </div>
+        
+        
+        </h:form>
+        
+    </body>
+</html>
